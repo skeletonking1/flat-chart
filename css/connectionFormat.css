@@ -1,0 +1,25 @@
+#connectionFormat .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    background-color: white;
+    border: 1px solid #888;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  #connectionFormat .confirmBtn
+  {
+      margin-right: 30px;
+      background-color: dodgerblue;
+      padding: 5px 10px;
+      
+  }
+  #connectionFormat .closeBtn
+  {
+   
+        background-color: white;
+        color: #333333;
+        padding: 5px 10px;
+  }
+  

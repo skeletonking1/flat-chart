@@ -1,0 +1,34 @@
+/* The Modal (background) */
+
+#styledFormat .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    background-color: white;
+    width: 30%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+
+  #styledFormat .confirmBtn
+  {
+      margin-right: 30px;
+      background-color: dodgerblue;
+      padding: 5px 10px;
+      
+  }
+
+  #styledFormat .modal-body {
+    text-align: left;
+  }
+  
+  #styledFormat .closeBtn
+  {
+   
+        background-color: white;
+        color: #333333;
+        padding: 2px 6px 2px 6px;
+        padding: 5px 10px;
+  }
+  

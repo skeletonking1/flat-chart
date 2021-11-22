@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>Flowchart Editor</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/jsPlumb-defaults.css">
+	<link rel="stylesheet" href="css/flowchart.css">
+	<link rel="stylesheet" href="css/jsPlumb-demo.css">
+	<link rel="stylesheet" href="css/confirmDelete.css">
+	<link rel="stylesheet" href="css/connectionFormat.css">
+	<link rel="stylesheet" href="css/styledFormat.css">
+</head>
+
+<body>
+	<div id="flowChartView" style="display:block;">
+
+
+		<div style="width:100%; height: 50%; white-space:nowrap;">
+			<header>
+				Header
+			</header>
+			<div class="container">
+
+				<div id="myPalette" style="border: solid 1px gray; height: auto">
+					<div class="palette"><span style="margin-right:8em">Palette</span>
+					</div>
+
+					<div class="jtk-demo-canvas canvas-wide flowchart-demo" id="canvas1">
+						<div class="window diamond jsplumb-connected-desc" id="descEv">
+							<strong>
+								<p class="desc-text">Question</p>
+							</strong>
+						</div>
+						<div class="window step jsplumb-connected-end" id="endEv">
+							<strong>
+								<p>Output</p>
+							</strong>
+						</div>
+						<div class="window step jsplumb-connected-step" id="stepEv">
+							<strong>
+								<p>Action</p>
+							</strong>
+						</div>
+					</div>
+
+
+				</div>
+				<div class="between"></div>
+				<div class="jtk-demo-main" style="border: solid 1px gray;">
+					<div class="jtk-demo-canvas canvas-wide flowchart-demo jtk-surface  jtk-surface-nopan" id="canvas">
+					</div>
+				</div>
+			</div>
+
+			<footer>
+				Footer
+			</footer>
+
+		</div>
+	</div>
+	<div id="confirmDelete" class="modal">
+
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="title">Allert!!</div>
+				<div style="width: 2px;"></div>
+				<div class="close">&times;</div>
+			</div>
+			<div class="modal-body">
+				<p>Deleting question: "Is User active"</p>
+				<p>Are you sure?</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="confirmBtn">Yes</button>
+				<button type="button" class="closeBtn">No</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="connectionFormat" class="modal">
+
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="title">connection Format</div>
+				<div style="width: 2px;"></div>
+				<div class="close">&times;</div>
+			</div>
+			<div class="modal-body">
+				<div style="display: flex; margin-bottom: 5px;">
+					<label style="width: 40%;">text:</label>
+					<label>no</label>
+				</div>
+				<div style="display: flex; margin-bottom: 5px;">
+					<label style="width: 40%;">line style:</label>
+					<select id="style_choice" >
+						<option value="dashed">Dashed</option>
+						<option value="solid">Solid</option>
+					</select>
+				</div>
+				<div style="display: flex; margin-bottom: 5px;">
+					<label style="width: 40%;">line color:</label>
+					<input type="color" id="lineColor" value="#e66465">
+				</div>
+				<div style="display: flex; margin-bottom: 5px;">
+					<label style="width: 40%;">line tick:</label>
+					<select id="tick_choice" >
+						<option value="thin">Thin</option>
+						<option value="thick">Thick</option>
+					</select>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="confirmBtn">Save</button>
+				<a href="#" class="closeBtn">cancel</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="styledFormat" class="modal">
+
+		<div class="modal-content">
+			<div class="modal-header">
+				<div class="title">Question format dialog</div>
+				<div style="width: 2px;"></div>
+				<div class="close">&times;</div>
+			</div>
+			<div class="modal-body">
+				<div style="width: 100%;">
+					<div style="display: flex; margin-bottom: 5px;">
+						<label style="width: 40%;">text:</label>
+						<label id="text"></label>
+					</div>
+					<div style="display: flex; margin-bottom: 5px;">
+						<label style="width: 40%;">line style:</label>
+						<select id="style_choice" >
+							<option value="dashed">Dashed</option>
+							<option value="solid">Solid</option>
+						</select>
+					</div>
+					<div style="display: flex; margin-bottom: 5px;">
+						<label style="width: 40%;">line color:</label>
+						<input type="color" id="lineColor" value="#e66465">
+					</div>
+					<div style="display: flex; margin-bottom: 5px;">
+						<label style="width: 40%;">line tick:</label>
+						<select id="tick_choice" >
+							<option value="thin">Thin</option>
+							<option value="thick">Thick</option>
+						</select>
+					</div>
+					<div style="display: flex; margin-bottom: 5px;">
+						<label style="width: 40%;">font:</label>
+						<label style="margin: 10px; margin-top: 2px">Arial 15</label>
+						<input type="color" id="fontColor" value="#e66465">
+					</div>
+					<div style="display: flex; margin-bottom: 5px;">
+						<label style="width: 40%;">bg color:</label>
+						<input type="color" id="bgColor" value="#e66465">
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="confirmBtn">Save</button>
+				<a href="#" class="closeBtn">cancel</a>
+			</div>
+		</div>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jsPlumb-2.0.7.js"></script>
+	<script type="text/javascript" src="js/flowchart.js"></script>
+</body>
+
+</html>
